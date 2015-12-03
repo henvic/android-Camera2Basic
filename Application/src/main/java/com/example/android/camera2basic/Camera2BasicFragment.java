@@ -687,6 +687,12 @@ public class Camera2BasicFragment extends Fragment
                             // When the session is ready, we start displaying the preview.
                             mCaptureSession = cameraCaptureSession;
                             try {
+                                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE,
+                                        CaptureRequest.CONTROL_EFFECT_MODE_MONO);
+
+                                mPreviewRequestBuilder.set(CaptureRequest.EDGE_MODE,
+                                        CaptureRequest.EDGE_MODE_HIGH_QUALITY);
+
                                 // Auto focus should be continuous for camera preview.
                                 mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
                                         CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
